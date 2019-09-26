@@ -1,0 +1,7 @@
+set.dir(input=data/mothur, output=data/mothur, seed=20122016)
+remove.groups(count=cmpgos.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.count_table, fasta=cmpgos.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, taxonomy=cmpgos.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.taxonomy, groups=e_nupos-l_nupos_old)
+cluster.split(fasta=cmpgos.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.fasta, count=cmpgos.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.pick.count_table, taxonomy=cmpgos.trim.contigs.good.unique.good.filter.unique.precluster.pick.pds.wang.pick.pick.taxonomy, splitmethod=classify, taxlevel=4, cutoff=0.03, processors=14)
+make.shared(list=current, count=current, label=0.03)
+classify.otu(list=current, count=current, taxonomy=current, label=0.03)
+count.groups(shared=current)
+rarefaction.single(shared=current)

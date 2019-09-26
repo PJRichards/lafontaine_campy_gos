@@ -1,0 +1,2 @@
+set.dir(input=data/mothur, output=data/mothur, seed=20122016)
+get.oturep(column=cmpgos.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.dist, list=cmpgos.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.opti_mcc.list, fasta=cmpgos.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.pick.fasta, count=cmpgos.trim.contigs.good.unique.good.filter.unique.precluster.denovo.vsearch.pick.pick.pick.count_table, label=0.03)
