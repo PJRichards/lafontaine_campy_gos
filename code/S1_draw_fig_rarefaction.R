@@ -56,16 +56,15 @@ raref_f_n <- raref_f %>%
                                    "6-dc. GOS + Campylobacter 35 da", "6-dc. Control 8 da", 
                                    "6-dc. GOS 8 da", "20-dc. Campylobacter 22 da", 
                                    "20-dc. GOS + Campylobacter 22 da"),
-                        rep = str_sub(sample, str_length(sample), str_length(sample)))
+                        `bird no.` = str_sub(sample, str_length(sample), str_length(sample)))
 
 
 # plot data
 raref.p <- raref_f_n %>% 
                 ggplot() +
-                    geom_line(aes(x=numsampled, y = OTUs, group = sample, colour = rep)) +
+                    geom_line(aes(x=numsampled, y = OTUs, group = sample, colour = `bird no.`)) +
                     theme_bw() + 
-                    theme(legend.position = "none",
-                          strip.background = element_rect(fill = NA, color = "#000000"),
+                    theme(strip.background = element_rect(fill = NA, color = "#000000"),
                           panel.border = element_rect(fill = NA, color = "black"),
                           panel.grid.minor = element_blank()) + 
                     labs(y = "Number of OTUS", x = "Number of reads sampled") +
